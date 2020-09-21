@@ -49,10 +49,7 @@ router.post(
 
       const salt= await bcrypt.genSalt(10)
       user.password= await bcrypt.hash(password,salt)
-      await user.save();
-
       // return jsonwebtoken
-      res.send("user save it ")
     } catch (err) {
       res.status(500).status("Server Error");
     }
